@@ -1,8 +1,4 @@
-import { Elysia } from "elysia";
-import { swagger } from '@elysiajs/swagger';
-
-const app = new Elysia();
-app.use(swagger());
+import { app } from "./server";
 
 /**
  * In-memory store to simulate session-like behavior.
@@ -59,9 +55,4 @@ app.get("/all-users", () => {
   }));
 
   return { users: allUsers };
-});
-
-// Start the server on port 5000
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
 });
